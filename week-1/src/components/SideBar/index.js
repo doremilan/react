@@ -1,8 +1,15 @@
-import MemoList from './MemoList';
-import SideBarFooter from './SideBarFooter';
-import SideBarHeader from './SideBarHeader';
+import MemoList from '../MemoList';
+import SideBarFooter from '../SideBarFooter';
+import SideBarHeader from '../SideBarHeader';
+import './index.css';
 
-function SideBar({ memos, setSelectedMemoIndex, selectedMemoIndex, addMemo }) {
+function SideBar({
+  memos,
+  setSelectedMemoIndex,
+  selectedMemoIndex,
+  addMemo,
+  deleteMemo,
+}) {
   return (
     <div className="SideBar">
       <SideBarHeader />
@@ -10,6 +17,7 @@ function SideBar({ memos, setSelectedMemoIndex, selectedMemoIndex, addMemo }) {
         memos={memos}
         selectedMemoIndex={selectedMemoIndex}
         setSelectedMemoIndex={setSelectedMemoIndex}
+        deleteMemo={deleteMemo}
       />
       <SideBarFooter onClick={addMemo} />
     </div>

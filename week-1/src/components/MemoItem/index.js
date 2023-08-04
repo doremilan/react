@@ -1,11 +1,13 @@
+import './index.css';
+
 function MemoItem({ children, onClickItem, onClickDelete, isSelected }) {
   return (
     <div
       className={'MemoItem' + (isSelected ? ' selected' : '')}
-      onClickItem={onClickItem}
+      onClick={onClickItem}
     >
       {children}
-      <button className="MemoItem__delete-button" onClickDelete={onClickDelete}>
+      <button className="MemoItem__delete-button" onClick={onClickDelete}>
         X
       </button>
     </div>
