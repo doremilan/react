@@ -3,7 +3,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding: 5px 8px;
+  padding: 10px 8px;
   position: relative;
   box-sizing: border-box;
 }
