@@ -2,80 +2,13 @@ import { styled } from 'styled-components';
 
 import { PRIMARY, SECONDARY, TERTIARY } from '../../constants/color';
 
-interface ColorMap {
-  PRIMARY: {
-    BUTTON: {
-      DEFAULT: {
-        COLOR: string;
-        BACKGROUND: string;
-      };
-      HOVER: {
-        COLOR: string;
-        BACKGROUND: string;
-      };
-      PRESSED: {
-        COLOR: string;
-        BACKGROUND: string;
-      };
-      DISABLED: {
-        COLOR: string;
-        BACKGROUND: string;
-      };
-    };
-  };
-  SECONDARY: {
-    BUTTON: {
-      DEFAULT: {
-        COLOR: string;
-        BACKGROUND: string;
-      };
-      HOVER: {
-        COLOR: string;
-        BACKGROUND: string;
-      };
-      PRESSED: {
-        COLOR: string;
-        BACKGROUND: string;
-      };
-      DISABLED: {
-        COLOR: string;
-        BACKGROUND: string;
-      };
-    };
-  };
-  TERTIARY: {
-    BUTTON: {
-      DEFAULT: {
-        COLOR: string;
-        BACKGROUND: string;
-        BORDER: string;
-      };
-      HOVER: {
-        COLOR: string;
-        BACKGROUND: string;
-        BORDER: string;
-      };
-      PRESSED: {
-        COLOR: string;
-        BACKGROUND: string;
-        BORDER: string;
-      };
-      DISABLED: {
-        COLOR: string;
-        BACKGROUND: string;
-        BORDER: string;
-      };
-    };
-  };
-}
-
-const colorMap: ColorMap = {
+const colorMap: any = {
   PRIMARY,
   SECONDARY,
   TERTIARY,
 };
 
-const Button = styled.button`
+const Button = styled.button<{ type: string }>`
   padding: 16px 24px;
   width: 200px;
 
@@ -84,6 +17,7 @@ const Button = styled.button`
   border-radius: 4px;
   border: none;
   font-weight: bold;
+  transition: all 240ms ease-in-out;
 
   border: ${({ type }) =>
     type === 'TERTIARY'

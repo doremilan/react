@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  answer: string[];
+  answer?: string[];
   setAnswer: any;
   options: {
     items: string[];
@@ -27,8 +27,11 @@ function Item({
   );
 }
 
-function SelectInput({ answer = [], setAnswer, options }: Props) {
+function SelectInput({ answer, setAnswer, options }: Props) {
   const handleChange = (isChecked: boolean, index: number) => {
+    if (!answer) {
+      return;
+    }
     if (isChecked) {
       setAnswer([...answer, index]);
     } else {
@@ -67,6 +70,7 @@ const ItemWrapper = styled.div`
     border-radius: 100%;
     vertical-align: middle;
     margin-right: 10px;
+    transition: border 180ms ease-in-out;
   }
   input[type='checkbox']:checked ~ span {
     border: 8px solid #6542f1;
@@ -89,3 +93,7 @@ const SelectInputWrapper = styled.div`
 `;
 
 export default SelectInput;
+
+SelectInput.defaultProps = {
+  answer: [],
+};
