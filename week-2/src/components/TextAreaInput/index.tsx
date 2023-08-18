@@ -34,3 +34,7 @@ const TextArea = styled.textarea`
 `;
 
 export default TextAreaInput;
+
+TextAreaInput.defaultProps = {
+  answer: [],
+};

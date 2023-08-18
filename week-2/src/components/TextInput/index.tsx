@@ -32,3 +32,7 @@ const Input = styled.input`
 `;
 
 export default TextInput;
+
+TextInput.defaultProps = {
+  answer: [],
+};
